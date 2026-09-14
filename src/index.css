@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@keyframes speed-spin {
+  0% { transform: scale(1.1) rotate(0deg); }
+  50% { transform: scale(1.1) rotate(1.5deg); }
+  100% { transform: scale(1.1) rotate(-1deg); }
+}
+
+.speed-lines {
+  background: repeating-conic-gradient(
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0) 1.5%,
+    rgba(255, 255, 255, 0.4) 1.8%,
+    rgba(255, 255, 255, 0) 2.2%
+  );
+  -webkit-mask-image: radial-gradient(ellipse at center, transparent 40%, black 100%);
+  mask-image: radial-gradient(ellipse at center, transparent 40%, black 100%);
+  animation: speed-spin 0.1s steps(2) infinite;
+}
